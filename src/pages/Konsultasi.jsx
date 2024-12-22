@@ -92,27 +92,33 @@ const Konsultasi = () => {
               </tr>
             </thead>
             <tbody>
-              {questions.map((question) => (
-                <tr key={question.id}>
-                  <td className="px-6 py-4 border-b">{question.User.nama}</td>
-                  <td className="px-6 py-4 border-b">{question.pertanyaan}</td>
-                  <td className="px-6 py-4 border-b">
-                    {new Date(question.createdAt).toLocaleString()}
-                  </td>
-                  <td className="px-6 py-4 border-b">
-                    {question.is_answered ? (
-                      <span className="text-green-500">Sudah dijawab</span>
-                    ) : (
-                      <button
-                        className="bg-blue-600 text-white px-4 py-2 rounded-md mt-2"
-                        onClick={() => openModal(question.id)}
-                      >
-                        Jawab
-                      </button>
-                    )}
-                  </td>
-                </tr>
-              ))}
+              {questions ? (
+                questions.map((question) => (
+                  <tr key={question.id}>
+                    <td className="px-6 py-4 border-b">{question.User.nama}</td>
+                    <td className="px-6 py-4 border-b">{question.pertanyaan}</td>
+                    <td className="px-6 py-4 border-b">
+                      {new Date(question.createdAt).toLocaleString()}
+                    </td>
+                    <td className="px-6 py-4 border-b">
+                      {question.is_answered ? (
+                        <span className="text-green-500">Sudah dijawab</span>
+                      ) : (
+                        <button
+                          className="bg-blue-600 text-white px-4 py-2 rounded-md mt-2"
+                          onClick={() => openModal(question.id)}
+                        >
+                          Jawab
+                        </button>
+                      )}
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <div>
+                  <h1>belum ada yang membuat pertanyaan dari pasien!</h1>
+                </div>
+              )}
             </tbody>
           </table>
         </div>
