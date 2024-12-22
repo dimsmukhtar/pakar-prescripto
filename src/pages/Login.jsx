@@ -44,7 +44,7 @@ export default function Login() {
       </div>
 
       <div className="flex flex-col justify-center items-center col-span-2">
-        <h1 className="text-costumeBlue text-md sm:text-4xl font-bold">Login Pakar</h1>
+        <h1 className="text-costumeBlue text-md sm:text-4xl font-bold">Login Pakarrr</h1>
         <br />
         <form
           className="w-[350px] sm:w-full max-w-md xs:max-w-xs mx-auto relative bg-gray-100 shadow-md p-6 rounded-lg"
